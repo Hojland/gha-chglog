@@ -18,23 +18,23 @@ Further more you need to have [git-chlog](https://github.com/git-chglog/git-chgl
  - `changelog`: Changelog content if no `filename` input is empty
 
 ### Example workflow - upload a release asset
-On every `push` to `master` generate a CHANGELOG.md file.
+On every `push` to `main` generate a CHANGELOG.md file.
 
 ```yaml
 name: Build and release
 on: 
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: hojland/github-changelog-action@v1.0.1
+      - uses: hojland/gha-chglogn@v1.0.0
         with:
           next_version: "1.0.1"      
 ```
@@ -53,5 +53,3 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Steffen F. Qvistgaard** - *Initial work* - [ssoerensen](https://github.com/ssoerensen)
-
-See also the list of [contributors](https://github.com/nuuday/github-changelog-action/contributors) who participated in this project.
